@@ -1,0 +1,260 @@
+.z-textbox,.z-decimalbox,.z-intbox,.z-longbox,.z-doublebox {
+	font-family: 'Open Sans';
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	color: #696969;
+	min-height: 24px;
+	border: 1px solid #D5D5D5;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	margin: 0;
+	padding: 4px 5px 3px;
+	line-height: 14px;
+	background: none repeat scroll 0% 0% #FFF;
+}
+
+.z-decimalbox {
+	width: 120px;
+	text-align: right;
+}
+
+.z-textbox:hover,.z-decimalbox:hover,.z-intbox:hover,.z-longbox:hover,.z-doublebox:hover
+	{
+	border-color: #B5B5B5;
+	color: #858585;
+}
+
+.z-textbox:focus,.z-decimalbox:focus,.z-intbox:focus,.z-longbox:focus,.z-doublebox:focus
+	{
+	border-color: #F59942;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.z-textbox:active,.z-decimalbox:active,.z-intbox:active,.z-longbox:active,.z-doublebox:active
+	{
+	border-color: #F59942;
+}
+
+.z-combobox-input {
+	font-family: "Open Sans";
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	color: #707070;
+	height: 26px;
+	border-width: 1px 0px 1px 1px;
+	border-style: solid none solid solid;
+	border-color: #D5D5D5 -moz-use-text-color #D5D5D5 #D5D5D5;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	border-radius: 0px;
+	margin: 0px;
+	padding: 4px 5px;
+	line-height: 14px;
+}
+
+.z-combobox-input:hover {
+	border-color: #B5B5B5;
+}
+
+.z-combobox-input:active {
+	border-color: #F59942;
+}
+
+.z-combobox-input:focus {
+	border-color: #F59942;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.z-combobox-input[readonly] {
+	border-color: #ddd;
+	background: none repeat scroll 0% 0% #FFF;
+}
+
+.z-combobox-input[readonly]:hover {
+	border-color: #B5B5B5;
+}
+
+.z-combobox-input[readonly]:focus {
+	border-color: #F59942;
+}
+
+.z-combobox-input[readonly]:active {
+	border-color: #F59942;
+}
+
+.z-combobox-button {
+	font-size: 16px;
+	min-height: 26px;
+	min-width: 26px;
+	border: 1px solid #CFCFCF;
+	border-radius: 0px;
+}
+
+.z-combobox-button:hover {
+	border-color: #B5B5B5;
+	background: -moz-linear-gradient(top, #f5f5f5 0%, #f3f3f3 100%);
+	/* FF3.6+ */
+	background: linear-gradient(to bottom, #f5f5f5 0%, #f3f3f3 100%);
+	/* W3C */
+}
+
+.z-combobox-button:active {
+	border-color: #F59942;
+	background: -moz-linear-gradient(top, #f3f3f3 0%, #f5f5f5 100%);
+	/* FF3.6+ */
+	background: linear-gradient(to bottom, #f3f3f3 0%, #f5f5f5 100%);
+	/* W3C */
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.z-combobox-popup {
+	font-family: "Open Sans";
+	font-weight: normal;
+	font-size: 13px;
+	box-shadow: none;
+	padding: 0;
+	margin: 2px;
+}
+
+.z-comboitem {
+	font-size: 12px;
+	font-weight: normal;
+	color: #707070;
+	text-decoration: none;
+	display: block;
+	padding: 3px 2px;
+	position: relative;
+	text-shadow: 0px 1px #FFF;
+	white-space: nowrap;
+	cursor: pointer;
+	padding-left: 2px;
+}
+
+.z-comboitem:hover {
+	background: -moz-linear-gradient(top, #f5f5f5 0%, #f3f3f3 100%);
+	/* FF3.6+ */
+	background: linear-gradient(to bottom, #f5f5f5 0%, #f3f3f3 100%);
+	/* W3C */
+}
+
+.z-comboitem-selected {
+	background: -moz-linear-gradient(top, #f3f3f3 0%, #f7f7f7 100%);
+	/* FF3.6+ */
+	background: linear-gradient(to bottom, #f3f3f3 0%, #f7f7f7 100%);
+	/* W3C */
+}
+
+.z-comboitem-selected:hover {
+	background: -moz-linear-gradient(top, #f5f5f5 0%, #f3f3f3 100%);
+	/* FF3.6+ */
+	background: linear-gradient(to bottom, #f5f5f5 0%, #f3f3f3 100%);
+	/* W3C */
+	;
+}
+
+.z-comboitem-selected .z-comboitem-text {
+	color: #707070;
+	font-weight: 400;
+}
+
+.z-comboitem-selected:hover .z-comboitem-text {
+	color: #707070;
+}
+
+.z-combobox-shadow,.z-bandbox-shadow,.z-datebox-shadow {
+	webkit-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: 0;
+	box-shadow: 0;
+}
+
+.z-datebox-input {
+	font-family: 'Open Sans';
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	color: #696969;
+	height: 24px;
+	border: 1px solid #D5D5D5;
+	-webkit-border-radius: 3px 0 0 3px;
+	border-radius: 0px;
+	margin: 0;
+	padding: 4px 5px;
+	line-height: 14px;
+	background: #fff;
+	border-right: 0;
+	width: 80px;
+}
+
+.z-datebox-input:hover {
+	border-color: #B5B5B5;
+}
+
+.z-datebox-input:focus {
+	border-color: #F59942;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.z-datebox-input:active {
+	border-color: #F59942;
+}
+
+.z-datebox-input[readonly] {
+	border-color: #D5D5D5;
+	background: #fff;
+}
+
+.z-datebox-input[readonly]:hover {
+	border-color: #B5B5B5;
+}
+
+.z-datebox-input[readonly]:focus {
+	border-color: #F59942;
+}
+
+.z-datebox-input[readonly]:active {
+	border-color: #F59942;
+}
+
+.z-datebox-button {
+	font-size: 12px;
+	font-weight: 400;
+	color: #555;
+	line-height: 14px;
+	background: #EEE;
+	border: 1px solid #ccc;
+	border-radius: 0;
+}
+
+.z-datebox-button:hover {
+	border-color: #B5B5B5;
+	background: #EEE;
+}
+
+.z-datebox-button:focus {
+	border-color: #F59942;
+	background: #EEE;
+}
+
+.z-datebox-button:active {
+	border-color: #F59942;
+	background: #EEE;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.z-datebox-shadow {
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}

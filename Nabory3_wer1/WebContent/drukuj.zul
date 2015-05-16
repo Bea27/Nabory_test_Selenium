@@ -1,0 +1,24 @@
+<zk>
+<window title="Drukowanie formularza" border="normal" mode="modal" width="300px" closable="true"
+		action="show: slideDown;hide: slideUp" sclass="wiadomosc">
+
+	<div width="300px" height="200px">
+			<div sclass="alert-info">
+				<label sclass="alert-tekst" value="Przepraszamy ta opcja jest jeszcze niedostępna."></label>
+			</div>	
+			<div  sclass="ozdobny"/>
+			<div width="100%">
+			<label sclass="alert" value="Are you sure?"></label>
+			</div>						
+			<div  height="30px" />
+			<div  sclass="dol">
+			<hlayout>
+				<button sclass="pomarancz" label="Akceptuję" onClick="@command('akceptuje')"> </button>
+				<button sclass="jasnoszary" label="Rezygnuję" onClick="@command('akceptuje')"> </button>				
+			</hlayout>
+			</div>
+	
+	</div>
+
+</window>
+</zk>

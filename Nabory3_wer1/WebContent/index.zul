@@ -1,0 +1,150 @@
+<?page title="Informacje odnośnie Naboru.zul"?>
+<?script type="text/javascript" src="/js/googleFonts.js"?>
+<?link rel="stylesheet" type="text/css" href="css/przyciski.css"?>
+<?link rel="stylesheet" type="text/css" href="css/grid.css"?>
+<?link rel="stylesheet" type="text/css" href="css/radio_check.css"?>
+<?link rel="stylesheet" type="text/css" href="css/boxy.css"?>
+<?link rel="stylesheet" type="text/css" href="css/div.css"?>
+<?link rel="stylesheet" type="text/css" href="css/modalWindow.css"?>
+<zk>
+<!-- ********************************************************************************** -->
+<div align="center" width="100%" apply="org.zkoss.bind.BindComposer"
+		            viewModel="@id('vm') @init('naborVM.NaborVM')"
+		            id="topDiv"
+		            style="background-image:url(./img/pattern.jpg);min-height: 600px;height:100%">
+
+<div height="50px" />
+<div style="background: #F7F7F7" width="900px">
+<grid width="900px" sclass="barwny">
+	<auxhead>
+		<auxheader colspan="2" label="Dane Naboru"/>
+	</auxhead>
+	<columns visible="false">
+				<column width="299px"></column>
+				<column width="599px"></column>
+	</columns>
+	<rows>			
+				<row>
+					<label value="Wybierz główną Oś" focus="true"/>
+					<combobox readonly="true" cols="70"
+						selectedItem="@bind(vm.os_glowna)"
+						onSelect="@command('filtrujDzialania')"
+						model="@load(vm.lista_osi)"
+						value="@load(vm.os_glowna.nazwa_osi)">
+						<template name="model" var="p1">
+							<comboitem label="@load(p1.nazwa_osi)" value="@load(p1.nazwa_osi)"/>
+						</template>
+					</combobox>
+				</row>
+				<row>
+					<label value="Wybierz Działanie" focus="true"/>
+					<combobox readonly="true" cols="70"
+						selectedItem="@bind(vm.wybraneDzialanie)"
+						onSelect="@command('filtrujPodDzialania')"
+						model="@load(vm.lista_dzialan)"
+						value="@load(vm.wybraneDzialanie.nazwaDzialania)">
+						<template name="model" var="p2">
+							<comboitem label="@load(p2.nazwaDzialania)" value="@load(p2.nazwaDzialania)"/>
+						</template>
+					</combobox>
+				</row>
+				<row>
+					<label value="Wybierz Poddziałanie" focus="true"/>
+					<combobox readonly="true" cols="70"
+						selectedItem="@bind(vm.wybranePodDzialanie)"
+						model="@load(vm.lista_poddzialan)"
+						value="@load(vm.wybranePodDzialanie.nazwaPodDzialania)">
+						<template name="model" var="p3">
+							<comboitem label="@load(p3.nazwaPodDzialania)" value="@load(p3.nazwaPodDzialania)"/>
+						</template>
+					</combobox>
+				</row>					
+				<row>
+					<label
+						value="Planowany termin rozpoczęcia naboru" />
+					<datebox readonly="true"
+						value="@bind(vm.rozpoczecieNaboru)">
+					</datebox>
+				</row>
+				<row>
+					<label
+						value="Planowany termin zakończenia naboru" />
+					<datebox readonly="true"
+						value="@bind(vm.zakonczenieNaboru)">
+					</datebox>
+				</row>
+				<row>
+					<label value="Budżet Naboru Kwota w (EUR)"></label>
+					<decimalbox value="@bind(vm.budzetNaboru)"
+						format="# ### ##0.00 '€'" style="text-align:right"
+						width="110px">
+					</decimalbox>
+				</row>
+				<row>
+					<label value="Status naboru" focus="true"/>
+					<combobox readonly="true" cols="50"
+						value=""
+						model="@load(vm.statusy)"
+						selectedItem="@bind(vm.statusNaboru)">
+						<template name="model">
+							<comboitem label="@load(each)" />
+						</template>
+					</combobox>
+				</row>
+				<row>
+					<label value="Instytucja ogłaszająca nabór" focus="true"/>
+					<combobox readonly="true" cols="50"
+						value=""
+						model="@load(vm.instytucje)"
+						selectedItem="@bind(vm.instytucjaOgl)">
+						<template name="model">
+							<comboitem label="@load(each)" />
+						</template>
+					</combobox>
+				</row>
+				<row>
+					<label value="Jedna z opcji powinna być zaznaczona" focus="true"/>
+					<div sclass="div01">
+					<radiogroup id="sv1" onCheck="choice1.value = self.selectedItem.label" />  				
+        			<grid>
+        			  <rows>
+            			<row><radio  sclass="theme" label="TAK" radiogroup="sv1" /></row>
+            			<row><radio  sclass="theme" label="NIE" radiogroup="sv1" /></row>
+            			<row><radio  sclass="theme" label="NIE WIEM" radiogroup="sv1" /></row>
+            		  </rows> 
+        			</grid>
+        			</div>             				
+				</row>						
+	</rows>
+	
+	<foot>
+		<footer span="2" height="50px">
+					<button label="Zapisz" sclass="jasnonieb btn-large" iconSclass="z-icon-save"
+						onClick="@command('zapiszNabor')">
+					</button>
+					<button label="Drukuj" sclass="zielony btn-large" iconSclass="z-icon-print"
+						onClick="@command('drukuj')">
+					</button>
+					<button label="PDF" sclass="niebieski btn-large" iconSclass="z-icon-file"
+						onClick="@command('drukuj')">
+					</button>
+					<button label="Pomoc" sclass="pomarancz btn-large" iconSclass="z-icon-question"
+						onClick="@command('pomoc')">
+					</button>
+					<button label="Podpisz" sclass="ciemnozolty btn-large" iconSclass="z-icon-pencil-square-o"
+					onClick="@command('robcos')">
+					</button>
+					<button label="Wyślij" sclass="zolty btn-large" iconSclass="z-icon-envelope"
+					onClick="@command('robcos')">
+					</button>
+					<button label="Wyjdź" sclass="typowy btn-large" iconSclass="z-icon-times"
+					onClick="@command('robcos')">
+					</button>
+		</footer>			
+	</foot>
+</grid>
+</div>
+				
+</div>
+
+</zk>
